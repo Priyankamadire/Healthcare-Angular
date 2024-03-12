@@ -1,0 +1,23 @@
+<div>
+    <h2>View Doctors</h2>
+  
+    <label for="search">Search Doctors by Name:</label>
+    <input type="text" id="search" name="search" [(ngModel)]="searchTerm" (input)="searchDoctors()">
+  
+    <div *ngIf="filteredDoctors.length > 0; else noDoctors">
+      <div *ngFor="let doctor of filteredDoctors" class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ doctor.name }}</h5>
+          <p class="card-text">{{ doctor.specialization }}</p>
+          <p class="availability" [ngClass]="{'available': doctor.availability, 'unavailable': !doctor.availability}">
+            Availability: {{ doctor.availability ? 'Available' : 'Not Available' }}
+          </p>
+        </div>
+      </div>
+    </div>
+  
+    <ng-template #noDoctors>
+      <p>No doctors found with the given search criteria.</p>
+    </ng-template>
+  </div>
+  

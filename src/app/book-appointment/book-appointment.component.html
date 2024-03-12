@@ -1,0 +1,52 @@
+<div>
+    <h2>Book an Appointment</h2>
+    <p>
+      Choose a suitable timing and specify the type of health issue you'd like to address.
+    </p>
+  
+    <div class="card-deck">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Morning Appointment</h5>
+          <p class="card-text">Available from 9:00 AM to 12:00 PM</p>
+          <button class="btn btn-primary" (click)="scheduleAppointment('Morning')">Book Now</button>
+        </div>
+      </div>
+  
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Afternoon Appointment</h5>
+          <p class="card-text">Available from 1:00 PM to 4:00 PM</p>
+          <button class="btn btn-primary" (click)="scheduleAppointment('Afternoon')">Book Now</button>
+        </div>
+      </div>
+  
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Evening Appointment</h5>
+          <p class="card-text">Available from 5:00 PM to 8:00 PM</p>
+          <button class="btn btn-primary" (click)="scheduleAppointment('Evening')">Book Now</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card mt-3">
+      <div class="card-body">
+        <h5 class="card-title">Specialized Consultation</h5>
+        <p class="card-text">Select the type of health issue you'd like to address:</p>
+        
+        <div class="form-group">
+          <label for="healthIssue">Health Issue:</label>
+          <select id="healthIssue" class="form-control" [(ngModel)]="selectedHealthIssue" required>
+            <option value="general">General Consultation</option>
+            <option value="cardiology">Cardiology</option>
+            <option value="dermatology">Dermatology</option>
+            <!-- Add more health issues as needed -->
+          </select>
+        </div>
+  
+        <button class="btn btn-primary" (click)="scheduleSpecialAppointment()">Book Now</button>
+      </div>
+    </div>
+  </div>
+  
